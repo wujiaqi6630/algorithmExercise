@@ -241,7 +241,10 @@ int findRepeatNums2 (vector<int> nums) {
         int times = 1;
         
         for (int i = 1; i < len; ++i) {
-            if (times == 0) pre = nums[i];
+            if (times == 0) {
+                times = 1;
+                pre = nums[i];
+            }
             else {
                 if (nums[i] == pre) times++;
                 else times--;
